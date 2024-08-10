@@ -1,20 +1,35 @@
-// eslint-disable-next-line react/prop-types
+// Video.js
+
+import React, { useRef, useEffect } from 'react';
+
 const Video = ({ video }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+
   return (
-    <div className="video">
-      <video controls width="100%" autoPlay={true}>
-         {/* eslint-disable-next-line react/prop-types */}
-        <source src={video.src} type="video/mp4" />
-      </video>
-      <div className="overlay">
-        <div className="inner-box">
-          <div className="para-box">
-         {/* eslint-disable-next-line react/prop-types */}
-            <p>{video.text}</p>
-          </div>
-          <div id="line"></div>
+    <div className='video-container'>
+      <video
+        className='hero-video'
+        ref={videoRef}
+        src={video.src}
+        muted
+        loop
+        playsInline
+      />
+      <div className='video-overlay'>
+        <div className='video-text'>
+          <strong>{video.text}</strong>
+          <p id='line'></p>
         </div>
-        {/* <p className="legend">{video.legend}</p> */}
+        <div className='next-arrow'>
+        <i className="fa-solid fa-arrow-right"></i>
+          {/* &#x2193; Arrow pointing down */}
+        </div>
       </div>
     </div>
   );

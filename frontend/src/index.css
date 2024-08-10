@@ -68,3 +68,59 @@ nav ul{
   height: 2px;
   background: white;
 }
+
+/* Chagpt's styling */
+/* Video Styles */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 90.5vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay Styles */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 20px;
+}
+
+/* Text Styles */
+.video-text {
+  color: white;
+  margin-bottom: 50px; /* Adjust this value to move the text higher or lower */
+  text-align: center;
+}
+
+.video-text strong {
+  font-size: 2rem; /* Adjust font size as needed */
+  display: block;
+  margin-bottom: 10px;
+}
+
+.video-text p {
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+/* Arrow Styles */
+.next-arrow {
+  text-align: center;
+  font-size: 2rem; /* Adjust arrow size as needed */
+  color: white;
+  margin-bottom: 20px; /* Space between text and arrow */
+  cursor: pointer;
+}
+
