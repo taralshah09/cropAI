@@ -2,7 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carous
 import { Carousel } from 'react-responsive-carousel';
 import Video from '../components/Video';
 import { useState } from 'react';
-import FeatureCards from "../components/FeaturesCards"
+import FeatureCards from "../components/Features"
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

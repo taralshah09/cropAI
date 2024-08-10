@@ -7,7 +7,6 @@ const Navbar = () => {
         <ul>
             <Link to='/disease' style={{textDecoration:"none",color:"white"}}>Disease</Link>
             <Link to='/info' style={{textDecoration:"none",color:"white"}}>Info</Link>
-            <Link to='/care'style={{textDecoration:"none",color:"white"}}>Care</Link>
             <Link to='/harvest'style={{textDecoration:"none",color:"white"}}>Harvest</Link>
         </ul>
     </nav>

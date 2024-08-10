@@ -188,53 +188,169 @@ nav ul{
 }
 
 
-/* Disease page */
-.disease-page{
+/* Features container */
+.features-container {
+  background-color: #40391C;
   width: 100%;
-  height: 89vh;
-  /* background: yellow; */
+  margin: 0 auto;
+  padding: 0;
 }
 
-.disease-page .disease-buttons-box{
+@media screen and (min-width: 992px) and (max-width: 1439px) {
+  .features-container {
+      max-width: 1279px;
+      margin: 0 80px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .features-container {
+      max-width: 959px;
+      margin: 0 16px;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .cards-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.features-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: transparent;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.card-content {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.feature-card {
+  background-color: #40391C;
+  width: 100%;
+  min-height: 100%;
+  
+}
+
+.feature-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.feature-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
+
+/* Icon Styles */
+.icon-large {
+  font-size: 100px;
+  color: green;
+}
+
+#icon-disease, #icon-harvest {
+  color: palevioletred;
+}
+
+.bg-green-card {
+  background-color: #dff0d8;
+}
+
+.bg-white-card {
+  background-color: #ffffff;
+}
+
+.bg-yellow-card {
+  background-color: #fff3cd;
+}
+
+
+
+/* Disease Page */
+.disease-page {
+  width: 100%;
+  height: 89vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
-  gap: 15px;
+  padding: 25px 50px;
+  background-color: #f5f5f5;
 }
 
-.disease-page .disease-buttons-box .option-card{
+.disease-page .disease-buttons-box {
   display: flex;
-  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.disease-page .disease-buttons-box .option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
   border-radius: 15px;
   border: 4px solid rgb(91, 177, 91);
   padding: 15px;
-  gap:15px;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 15px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
 }
-.disease-page .disease-buttons-box .option-card .img-box{
+
+.disease-page .disease-buttons-box .option-card:hover {
+  transform: scale(1.05);
+}
+
+.disease-page .disease-buttons-box .option-card .img-box {
   background: rgb(91, 177, 91);
-  padding: 25px 30px;
+  padding: 20px;
   border-radius: 50%;
-  font-size: 35px;
+  font-size: 30px;
   color: white;
 }
-.disease-page .disease-buttons-box .option-card .content{
+
+.disease-page .disease-buttons-box .option-card .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
-.disease-page .disease-buttons-box .option-card .content h2{
-  font-size: 20px;
-  line-height: 25px;
+
+.disease-page .disease-buttons-box .option-card .content h2 {
+  font-size: 18px;
+  line-height: 22px;
   color: rgb(91, 177, 91);
 }
 
-.disease-page .disease-buttons-box .option-card .content p{
-  font-size: 16px;
+.disease-page .disease-buttons-box .option-card .content p {
+  font-size: 14px;
+  color: #333;
 }
-
 
 /* Disease scan page*/
 .disease-scan-page {
@@ -363,4 +479,71 @@ color: rgb(91, 177, 91);
   border: 1px solid;
   border-radius: 5px;
   overflow: auto;
+}
+
+/* Crop Info Page */
+
+/* Crop Info Page */
+.crop-info-page {
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 50px;
+  background-color: #f5f5f5;
+}
+
+.crop-info-page .info-buttons-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.crop-info-page .info-buttons-box .info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  border-radius: 15px;
+  border: 4px solid rgb(91, 177, 91);
+  padding: 15px;
+  gap: 15px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.crop-info-page .info-buttons-box .info-card:hover {
+  transform: scale(1.05);
+}
+
+.crop-info-page .info-buttons-box .info-card .img-box {
+  background: rgb(91, 177, 91);
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+}
+
+.crop-info-page .info-buttons-box .info-card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.crop-info-page .info-buttons-box .info-card .content h2 {
+  font-size: 18px;
+  line-height: 22px;
+  color: rgb(91, 177, 91);
+  text-align: center;
+}
+
+.crop-info-page .info-buttons-box .info-card .content p {
+  font-size: 14px;
+  text-align: center;
+  color: #333;
 }
