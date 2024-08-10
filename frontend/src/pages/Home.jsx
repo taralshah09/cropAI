@@ -1,37 +1,52 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
-import { Carousel } from "react-responsive-carousel";
-import Video from "../components/Video";
-import FeaturesCards from "../components/FeaturesCards";
-
+import { Carousel } from 'react-responsive-carousel';
+import Video from '../components/Video';
+import { useState } from 'react';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselVideos.length);
+  };
+
   const carouselVideos = [
     {
-      src: "/videos/cropAI_vid1.mp4",
-      text: "This is a bold text for Video 1",
-      legend: "Legend for Video 1",
+      "src": "/videos/cropAI_vid1.mp4",
+      "text": "Revolutionizing Agriculture with AI",
+      "legend": "Explore how AI-driven solutions are transforming crop management and boosting yields."
     },
     {
-      src: "/videos/cropAI_vid2.mp4",
-      text: "This is a bold text for Video 2",
-      legend: "Legend for Video 2",
+      "src": "/videos/cropAI_vid2.mp4",
+      "text": "The Future of Farming is Here",
+      "legend": "Discover cutting-edge technologies that are making farming more efficient and sustainable."
     },
     {
-      src: "/videos/cropAI_vid3.mp4",
-      text: "This is a bold text for Video 3",
-      legend: "Legend for Video 3",
-    },
+      "src": "/videos/cropAI_vid3.mp4",
+      "text": "Innovative Tech for Smarter Agriculture",
+      "legend": "From drones to data analytics, see how innovation is shaping the future of agriculture."
+    }
   ];
+
   return (
-    <div className="home-page">
-      <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
-        {carouselVideos.map((video) => {
-          // eslint-disable-next-line react/jsx-key
-          return <Video video={video} />;
-        })}
+    <div>
+      <Carousel 
+        selectedItem={currentSlide} 
+        showThumbs={false} 
+        autoPlay={true} 
+        infiniteLoop={true}
+        showArrows={false}  // Hide the arrows
+        onChange={(index) => setCurrentSlide(index)}
+      >
+        {carouselVideos.map((video, index) => (
+          <Video 
+          className="carousel-item"
+            key={index} 
+            video={video} 
+            onNextSlide={handleNextSlide}
+          />
+        ))}
       </Carousel>
-      {/*  Cards here*/}
-      <FeaturesCards/>
     </div>
   );
 };
