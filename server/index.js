@@ -1,29 +1,14 @@
 const express = require("express");
 const app = express();
-const port = 3010;
-const run = require("./geminiapi");
-const mongoose = require("mongoose");
+const port = 3012;
 const bodyParser = require("body-parser");
+
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("views", __dirname + "/views");
-
-// require("./geminiapi");
-// require("./image");
-app.get("/", (req, res) => {
-  res.render("home");
-});
-app.get("/api", (req, res) => {
-  res.render("api");
-});
-const response = "";
-const { GoogleAIFileManager } = require("@google/generative-ai/server");
-const {
-  GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
-} = require("@google/generative-ai");
 
 const apiKey = "AIzaSyBed5H9wfqmBYLvdhyhymvYxU3pKWbY-3s";
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -39,6 +24,15 @@ const generationConfig = {
   maxOutputTokens: 8192,
   responseMimeType: "text/plain",
 };
+
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
+app.get("/api", (req, res) => {
+  res.render("api", { ans: null }); // Render `api.ejs` with `ans` as null initially
+});
+
 app.post("/api", async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -46,21 +40,25 @@ app.post("/api", async (req, res) => {
     async function run(prompt) {
       const chatSession = model.startChat({
         generationConfig,
-        // safetySettings: Adjust safety settings
-        // See https://ai.google.dev/gemini-api/docs/safety-settings
         history: [],
       });
 
-      const result = await chatSession.sendMessage(`${prompt}`);
-      console.log(`prompt is ${prompt}`);
-      console.log(result.response.text());
+      const result = await chatSession.sendMessage(prompt);
+      console.log(`Prompt is: ${prompt}`);
+      return result.response.text(); // Return the response text
     }
-    response = await run(prompt);
-    res.render("/api", { ans: response });
+
+    const ans = await run(prompt); // Await the response from `run`
+
+    res.render("api", { ans }); // Render the same `api.ejs` page with `ans`
   } catch (error) {
     console.log(error);
+    res.render("api", {
+      ans: "An error occurred while processing your request.",
+    }); // Handle error cases
   }
 });
-app.listen(port, (req, res) => {
-  console.log("server connected");
+
+app.listen(port, () => {
+  console.log(`Server connected on port ${port}`);
 });

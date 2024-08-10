@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Prompt</title>
 </head>
 
 <body>
-    This is the api page
+    <h1>Enter Your Prompt</h1>
     <form action="/api" method="POST">
-        <input type="text" name="prompt" placeholder="write your prompt here">
-        <input type="submit">
+        <textarea name="prompt" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Submit</button>
     </form>
-    <!-- <div class="ans">
-       
-    </div> -->
 
+    <div class="ans">
+        <% if (ans) { %>
+            <h2>Response:</h2>
+            <pre><%= ans %></pre>
+            <% } %>
+    </div>
 </body>
 
 </html>
