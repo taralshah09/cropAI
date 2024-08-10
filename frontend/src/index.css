@@ -186,3 +186,181 @@ nav ul{
 .carousel-item {
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+
+
+/* Disease page */
+.disease-page{
+  width: 100%;
+  height: 89vh;
+  /* background: yellow; */
+}
+
+.disease-page .disease-buttons-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  gap: 15px;
+}
+
+.disease-page .disease-buttons-box .option-card{
+  display: flex;
+  width: 500px;
+  border-radius: 15px;
+  border: 4px solid rgb(91, 177, 91);
+  padding: 15px;
+  gap:15px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.disease-page .disease-buttons-box .option-card .img-box{
+  background: rgb(91, 177, 91);
+  padding: 25px 30px;
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+}
+.disease-page .disease-buttons-box .option-card .content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.disease-page .disease-buttons-box .option-card .content h2{
+  font-size: 20px;
+  line-height: 25px;
+  color: rgb(91, 177, 91);
+}
+
+.disease-page .disease-buttons-box .option-card .content p{
+  font-size: 16px;
+}
+
+
+/* Disease scan page*/
+.disease-scan-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 100%;
+  gap: 25px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  width: 40%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.custom-file-upload:hover {
+  background-color: #45a049;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.uploaded-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.uploaded-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+.disease-empty-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  border: 1px solid;
+}
+
+.disease-scan-page .answer-box{
+  flex-basis: 50%;
+  padding: 25px;
+  border: 1px solid;
+  margin-left: 35px;  
+  border-radius: 5px;
+}
+
+/* Disease Describe Page */
+.disease-describe-page{
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 25px 50px;
+}
+
+.disease-describe-page .form-container{
+  width: 500px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-basis: 50%;
+}
+.disease-describe-page form{
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  width: 100%;
+}
+.disease-describe-page .form-container  h2{
+color: rgb(91, 177, 91);
+}
+.disease-describe-page form textarea{
+  width: 100%;
+  height: 250px;
+  resize: none;
+  border-radius: 5px;
+  outline: 0;
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid rgb(91, 177, 91);
+}
+.disease-describe-page form button{
+  color: white;
+  background: rgb(91, 177, 91);
+  border: 0;
+  outline: 0;
+  padding: 9px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.disease-describe-page {
+  display: flex;
+}
+
+.disease-describe-page .answer-box {
+  flex-basis: 50%;
+  min-height: 100%;
+  border: 1px solid;
+  border-radius: 5px;
+  overflow: auto;
+}
