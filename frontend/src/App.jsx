@@ -5,6 +5,7 @@ import DiseasePage from './pages/DiseasePage';
 import DiseaseScanPage from './pages/DiseaseScanPage';
 import DiseaseDescribePage from './pages/DiseaseDescribePage';
 import CropInfoPage from './pages/CropInfoPage';
+import HarvestPage from './pages/HarvestPage';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route index element={<Home/>} />
             <Route path='/disease' element={<DiseasePage/>} />
             <Route path='/info' element={<CropInfoPage/>} />
-            <Route path='/harvest' element={<h1>Chat Page</h1>} />
+            <Route path='/harvest' element={<HarvestPage/>} />
             <Route path='/disease/scan' element={<DiseaseScanPage/>} />
             <Route path='/disease/describe' element={<DiseaseDescribePage/>} />
             <Route path='/info/pest-prevention' element={<h1>PestPrevention</h1>} />

@@ -1,0 +1,36 @@
+/* Home.css */
+.home {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Carousel styles */
+  .carousel .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel .control-prev, 
+  .carousel .control-next {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+  }
+  
+  /* Features section styles */
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .features-section .feature-box {
+    max-width: 300px;
+    margin: 10px;
+  }
+  

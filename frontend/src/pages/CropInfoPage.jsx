@@ -1,10 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CropInfoPage = () => {
+  const [cropName, setCropName] = useState("");
+
+  const handleInputChange = (event) => {
+    setCropName(event.target.value);
+  };
+
   return (
     <div className="crop-info-page">
+      <form action="">
+        <input
+          type="text"
+          placeholder="Enter the crop name e.g., Maize"
+          value={cropName}
+          onChange={handleInputChange}
+        />
+      </form>
       <div className="info-buttons-box">
-        <Link to="/info/pest-prevention" style={{ textDecoration: "none", color: "black" }}>
+        <Link to={`/info/pest-prevention?crop=${cropName}`} style={{ textDecoration: "none", color: "black" }}>
           <div className="info-card">
             <div className="img-box">
               <i className="fa-solid fa-bug"></i>
@@ -17,7 +32,7 @@ const CropInfoPage = () => {
             </div>
           </div>
         </Link>
-        <Link to="/info/disease-management" style={{ textDecoration: "none", color: "black" }}>
+        <Link to={`/info/disease-management?crop=${cropName}`} style={{ textDecoration: "none", color: "black" }}>
           <div className="info-card">
             <div className="img-box">
               <i className="fa-solid fa-virus"></i>
@@ -30,7 +45,7 @@ const CropInfoPage = () => {
             </div>
           </div>
         </Link>
-        <Link to="/info/nutrient-guide" style={{ textDecoration: "none", color: "black" }}>
+        <Link to={`/info/nutrient-guide?crop=${cropName}`} style={{ textDecoration: "none", color: "black" }}>
           <div className="info-card">
             <div className="img-box">
               <i className="fa-solid fa-seedling"></i>
