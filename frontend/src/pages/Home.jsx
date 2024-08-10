@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carous
 import { Carousel } from 'react-responsive-carousel';
 import Video from '../components/Video';
 import { useState } from 'react';
+import FeatureCards from "../components/FeaturesCards"
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,7 +30,7 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <div className="home-page">
       <Carousel 
         selectedItem={currentSlide} 
         showThumbs={false} 
@@ -47,6 +48,7 @@ const Home = () => {
           />
         ))}
       </Carousel>
+        <FeatureCards></FeatureCards>
     </div>
   );
 };
